@@ -1,0 +1,162 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+  TradeWithCEO design tokens — extracted from Figma
+  (file 4uZL26QU5Fyi7sZxcnuTeo, Iteration B / Section 4).
+  Dark-only theme. Fonts: Encode Sans (headings), Ubuntu (body).
+*/
+@theme {
+  /* Fonts */
+  --font-heading: var(--font-encode-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-ubuntu), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-ubuntu), ui-sans-serif, system-ui, sans-serif;
+
+  /* Text */
+  --color-foreground-strong: #f4f4f4; /* headings / stat values */
+
+  /* Brand accents (in addition to the shadcn semantic tokens below) */
+  --color-brand-green: #09b806; /* WhatsApp green — primary CTA */
+  --color-brand-green-600: #08a305;
+  --color-brand-gold: #ffd97d; /* headline highlight */
+  --color-brand-purple: #9170d0; /* headline highlight / badge */
+
+  /* Hero glows */
+  --color-glow-cyan: #35e8dd;
+  --color-glow-green: #09b806;
+  --color-glow-gold: #ffe39e;
+
+  /* Extra surfaces */
+  --color-bg-hero: #070811; /* hero backdrop (near-black) */
+  --color-surface-2: #222741;
+}
+
+/*
+  shadcn semantic token map (keeps shadcn/ui components themeable).
+*/
+@theme inline {
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+}
+
+/*
+  Dark-only palette wired to the Figma design.
+  Values live on :root (site is always dark); .dark mirrors them.
+*/
+:root {
+  --radius: 0.75rem;
+
+  --background: #16192c; /* page navy */
+  --foreground: #ededed;
+
+  --card: #1c2036;
+  --card-foreground: #ededed;
+
+  --popover: #1c2036;
+  --popover-foreground: #ededed;
+
+  --primary: #09b806; /* WhatsApp green */
+  --primary-foreground: #ffffff;
+
+  --secondary: #222741;
+  --secondary-foreground: #f4f4f4;
+
+  --muted: #222741;
+  --muted-foreground: #b7b7b7;
+
+  --accent: #222741;
+  --accent-foreground: #f4f4f4;
+
+  --destructive: #e5484d;
+
+  --border: #2a2f4a;
+  --input: #2a2f4a;
+  --ring: #35e8dd;
+
+  --chart-1: #09b806;
+  --chart-2: #35e8dd;
+  --chart-3: #ffd97d;
+  --chart-4: #9170d0;
+  --chart-5: #f4f4f4;
+
+  --sidebar: #1c2036;
+  --sidebar-foreground: #ededed;
+  --sidebar-primary: #09b806;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #222741;
+  --sidebar-accent-foreground: #f4f4f4;
+  --sidebar-border: #2a2f4a;
+  --sidebar-ring: #35e8dd;
+}
+
+.dark {
+  --background: #16192c;
+  --foreground: #ededed;
+  --card: #1c2036;
+  --card-foreground: #ededed;
+  --popover: #1c2036;
+  --popover-foreground: #ededed;
+  --primary: #09b806;
+  --primary-foreground: #ffffff;
+  --secondary: #222741;
+  --secondary-foreground: #f4f4f4;
+  --muted: #222741;
+  --muted-foreground: #b7b7b7;
+  --accent: #222741;
+  --accent-foreground: #f4f4f4;
+  --destructive: #e5484d;
+  --border: #2a2f4a;
+  --input: #2a2f4a;
+  --ring: #35e8dd;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    color-scheme: dark;
+    @apply font-body;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
