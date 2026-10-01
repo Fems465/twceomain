@@ -9,6 +9,7 @@ import { Container } from "@/components/landing/container";
 import { Eyebrow } from "@/components/landing/eyebrow";
 import { Stat } from "@/components/landing/stat";
 import { WhatsAppIcon } from "@/components/landing/icons";
+import { WhatsAppCta } from "@/components/landing/whatsapp-cta";
 import { HeroArt } from "@/components/landing/hero-art";
 
 import heroBg from "@/public/hero/hero-bg.webp";
@@ -93,16 +94,14 @@ export function Hero() {
               variants={item}
               className="mt-8 flex flex-wrap items-center gap-4"
             >
-              <Button
+              <WhatsAppCta
                 variant="whatsapp"
                 size="xl"
-                nativeButton={false}
                 className="transition-transform hover:-translate-y-0.5"
-                render={<a href="#chat" />}
               >
                 <WhatsAppIcon />
                 Chat WhatsApp
-              </Button>
+              </WhatsAppCta>
               <Button
                 variant="hero"
                 size="xl"

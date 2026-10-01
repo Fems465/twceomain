@@ -2,10 +2,10 @@
 
 import { motion, useReducedMotion, type Variants } from "motion/react";
 
-import { Button } from "@/components/ui/button";
 import { Container, Section } from "@/components/landing/container";
 import { Eyebrow } from "@/components/landing/eyebrow";
 import { EyebrowDot } from "@/components/products/eyebrow-dot";
+import { WhatsAppCta } from "@/components/landing/whatsapp-cta";
 
 const ROADMAP = [
   "Mobile application for iOS and Android",
@@ -63,14 +63,12 @@ export function Expanding() {
             flexibility and control over their crypto activity.
           </p>
           <div className="mt-8 flex justify-center">
-            <Button
+            <WhatsAppCta
               variant="hero"
-              nativeButton={false}
               className="h-11 rounded-full px-6 text-sm font-semibold font-heading transition-transform hover:-translate-y-0.5"
-              render={<a href="#chat" />}
             >
               Register your interest for early access
-            </Button>
+            </WhatsAppCta>
           </div>
         </motion.div>
 

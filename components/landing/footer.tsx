@@ -183,12 +183,18 @@ export function Footer() {
         <div className="flex flex-col gap-3 border-t border-white/5 pt-8 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <span>© 2026 TradeWithCEO. All Rights Reserved.</span>
           <div className="flex gap-6">
-            <a href="#" className="transition-colors hover:text-foreground-strong">
+            <Link
+              href="/privacy"
+              className="transition-colors hover:text-foreground-strong"
+            >
               Privacy Policy
-            </a>
-            <a href="#" className="transition-colors hover:text-foreground-strong">
+            </Link>
+            <Link
+              href="/terms"
+              className="transition-colors hover:text-foreground-strong"
+            >
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </Container>

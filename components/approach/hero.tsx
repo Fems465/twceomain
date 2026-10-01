@@ -5,6 +5,7 @@ import { motion, useReducedMotion, type Variants } from "motion/react";
 
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/landing/container";
+import { WhatsAppCta } from "@/components/landing/whatsapp-cta";
 
 import heroBg from "@/public/hero/hero-bg.webp";
 import sphereImg from "@/public/our-approach-hero-img.png";
@@ -85,15 +86,13 @@ export function ApproachHero() {
               variants={item}
               className="mt-8 flex flex-wrap items-center gap-4"
             >
-              <Button
+              <WhatsAppCta
                 variant="purple"
                 size="xl"
-                nativeButton={false}
                 className="transition-transform hover:-translate-y-0.5"
-                render={<a href="#chat" />}
               >
                 Start Exchange
-              </Button>
+              </WhatsAppCta>
               <Button
                 variant="hero"
                 size="xl"

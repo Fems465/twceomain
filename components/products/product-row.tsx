@@ -4,11 +4,11 @@ import { ArrowRight } from "lucide-react";
 import { motion, useReducedMotion, type Variants } from "motion/react";
 
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 import { Container, Section } from "@/components/landing/container";
 import { Eyebrow } from "@/components/landing/eyebrow";
 import { CheckList } from "@/components/products/check-list";
 import { EyebrowDot } from "@/components/products/eyebrow-dot";
+import { WhatsAppCta } from "@/components/landing/whatsapp-cta";
 
 export type Product = {
   id?: string;
@@ -16,7 +16,7 @@ export type Product = {
   title: string;
   intro: string;
   bullets: string[];
-  cta: { label: string; href: string; variant: "purple" | "gold" };
+  cta: { label: string; variant: "purple" | "gold" };
   /** Framed card image. `src` is a public path; drop the PNG there. */
   image: { src: string; alt: string };
   /** Which side the image sits on at lg+ (mobile always stacks image on top). */
@@ -95,16 +95,14 @@ export function ProductRow({ product }: { product: Product }) {
             </div>
 
             <div className="mt-9">
-              <Button
+              <WhatsAppCta
                 variant={cta.variant}
                 size="xl"
-                nativeButton={false}
                 className="group/cta transition-transform hover:-translate-y-0.5"
-                render={<a href={cta.href} />}
               >
                 {cta.label}
                 <ArrowRight className="transition-transform group-hover/cta:translate-x-0.5" />
-              </Button>
+              </WhatsAppCta>
             </div>
           </motion.div>
         </div>

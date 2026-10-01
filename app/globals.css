@@ -32,6 +32,18 @@
   /* Extra surfaces */
   --color-bg-hero: #070811; /* hero backdrop (near-black) */
   --color-surface-2: #222741;
+
+  /* WhatsApp redirect dialog — countdown progress bar */
+  --animate-whatsapp-progress: whatsapp-progress 3s linear forwards;
+}
+
+@keyframes whatsapp-progress {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
 }
 
 /*
@@ -158,5 +170,40 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/*
+  Legal pages (Privacy Policy, Terms of Service) — readable long-form prose.
+  Semantic HTML inside `.legal-prose` is styled here so the page files stay
+  content-only.
+*/
+@layer components {
+  .legal-prose {
+    @apply text-[15px] leading-[1.9] text-foreground;
+  }
+  .legal-prose h2 {
+    @apply mt-12 mb-4 scroll-mt-28 font-heading text-2xl font-semibold text-foreground-strong;
+  }
+  .legal-prose h2:first-child {
+    @apply mt-0;
+  }
+  .legal-prose h3 {
+    @apply mt-8 mb-3 font-heading text-lg font-semibold text-foreground-strong;
+  }
+  .legal-prose p {
+    @apply my-4;
+  }
+  .legal-prose ul {
+    @apply my-4 list-disc space-y-2 pl-5 marker:text-brand-purple;
+  }
+  .legal-prose li {
+    @apply pl-1;
+  }
+  .legal-prose a {
+    @apply text-brand-gold underline underline-offset-2 transition-colors hover:text-white;
+  }
+  .legal-prose strong {
+    @apply font-semibold text-foreground-strong;
   }
 }

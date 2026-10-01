@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/landing/container";
 import { Eyebrow } from "@/components/landing/eyebrow";
 import { WhatsAppIcon } from "@/components/landing/icons";
+import { WhatsAppCta } from "@/components/landing/whatsapp-cta";
 
 import heroBg from "@/public/hero/hero-bg.webp";
 import overviewDash from "@/public/product-hero-2.png"; // tilted "Overview"
@@ -150,16 +151,14 @@ export function ProductsHero() {
               variants={item}
               className="mt-8 flex flex-wrap items-center gap-4"
             >
-              <Button
+              <WhatsAppCta
                 variant="whatsapp"
                 size="xl"
-                nativeButton={false}
                 className="transition-transform hover:-translate-y-0.5"
-                render={<a href="#chat" />}
               >
                 <WhatsAppIcon />
                 Chat WhatsApp
-              </Button>
+              </WhatsAppCta>
               <Button
                 variant="hero"
                 size="xl"

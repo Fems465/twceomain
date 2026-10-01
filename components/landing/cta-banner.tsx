@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Container, Section } from "@/components/landing/container";
 import { WhatsAppIcon } from "@/components/landing/icons";
+import { WhatsAppCta } from "@/components/landing/whatsapp-cta";
 
 import ctaBg from "@/public/cta-bg.webp";
 
@@ -75,19 +76,33 @@ export function CtaBanner({
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-              <Button
-                variant="gold"
-                size="xl"
-                nativeButton={false}
-                className={cn(
-                  "transition-transform hover:-translate-y-0.5",
-                  ctaClassName,
-                )}
-                render={<a href={cta.href} />}
-              >
-                {ctaIcon}
-                {cta.label}
-              </Button>
+              {cta.href === "#chat" ? (
+                <WhatsAppCta
+                  variant="gold"
+                  size="xl"
+                  className={cn(
+                    "transition-transform hover:-translate-y-0.5",
+                    ctaClassName,
+                  )}
+                >
+                  {ctaIcon}
+                  {cta.label}
+                </WhatsAppCta>
+              ) : (
+                <Button
+                  variant="gold"
+                  size="xl"
+                  nativeButton={false}
+                  className={cn(
+                    "transition-transform hover:-translate-y-0.5",
+                    ctaClassName,
+                  )}
+                  render={<a href={cta.href} />}
+                >
+                  {ctaIcon}
+                  {cta.label}
+                </Button>
+              )}
               {secondaryCta ? (
                 <Button
                   variant="hero"

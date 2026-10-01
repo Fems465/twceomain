@@ -3,10 +3,10 @@
 import Image from "next/image";
 import { motion, useReducedMotion } from "motion/react";
 
-import { Button } from "@/components/ui/button";
 import { Container, Section } from "@/components/landing/container";
 import { Eyebrow } from "@/components/landing/eyebrow";
 import { WhatsAppIcon } from "@/components/landing/icons";
+import { WhatsAppCta } from "@/components/landing/whatsapp-cta";
 
 import ringImg from "@/public/coin-ring-features.webp";
 
@@ -82,16 +82,14 @@ export function CryptoSimple() {
             </div>
 
             <div className="mt-8">
-              <Button
+              <WhatsAppCta
                 variant="whatsapp"
                 size="xl"
-                nativeButton={false}
                 className="transition-transform hover:-translate-y-0.5"
-                render={<a href="#chat" />}
               >
                 <WhatsAppIcon />
                 Chat WhatsApp
-              </Button>
+              </WhatsAppCta>
             </div>
           </motion.div>
         </div>

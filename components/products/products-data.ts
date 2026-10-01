@@ -14,7 +14,7 @@ export const PRODUCTS: Product[] = [
       "Payouts processed in seconds, not hours",
       "Available 24 hours a day, 7 days a week",
     ],
-    cta: { label: "Start Exchange", href: "#chat", variant: "purple" },
+    cta: { label: "Start Exchange", variant: "purple" },
     image: {
       src: "/product-section-1.png",
       alt: "Map of Africa overlaid with a network of connected nodes",
@@ -35,7 +35,6 @@ export const PRODUCTS: Product[] = [
     ],
     cta: {
       label: "Enquire About Bulk Exchange",
-      href: "#chat",
       variant: "gold",
     },
     image: {
@@ -58,7 +57,6 @@ export const PRODUCTS: Product[] = [
     ],
     cta: {
       label: "Subscribe to Market Signals",
-      href: "#chat",
       variant: "purple",
     },
     image: {
@@ -81,7 +79,6 @@ export const PRODUCTS: Product[] = [
     ],
     cta: {
       label: "Open a Business Account",
-      href: "#chat",
       variant: "gold",
     },
     image: {
