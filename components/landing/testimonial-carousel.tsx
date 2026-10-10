@@ -36,7 +36,9 @@ function Card({ t }: { t: Testimonial }) {
           </div>
           <div className="leading-tight">
             <div className="text-sm font-semibold text-white">{t.name}</div>
-            <div className="text-xs text-white/70">{t.role}</div>
+            {t.role && (
+              <div className="text-xs text-white/70">{t.role}</div>
+            )}
           </div>
         </div>
       </div>
