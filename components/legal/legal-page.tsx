@@ -5,8 +5,8 @@ import { Container } from "@/components/landing/container";
 import heroBg from "@/public/hero/hero-bg.webp";
 
 /**
- * LegalPage — shared chrome for long-form legal documents (Privacy Policy,
- * Terms of Service). Renders a compact hero header and a readable prose column.
+ * LegalPage — shared chrome for long-form legal documents (Terms of Use,
+ * Privacy Policy, Cookie Policy, Disclaimers). Renders a compact hero header and a readable prose column.
  * Content is passed as children and styled via the `.legal-prose` rules in
  * globals.css, so page files stay content-only.
  */

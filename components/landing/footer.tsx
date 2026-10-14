@@ -57,6 +57,13 @@ const QUICK_LINKS = [
   { label: "FAQ", href: "/" },
 ];
 
+const LEGAL_LINKS = [
+  { label: "Terms of Use", href: "/terms" },
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Cookie Policy", href: "/cookies" },
+  { label: "Disclaimers", href: "/disclaimers" },
+];
+
 const SOCIALS = [
   { label: "Facebook", href: "#", Icon: FacebookIcon },
   { label: "Instagram", href: "#", Icon: InstagramIcon },
@@ -182,19 +189,16 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col gap-3 border-t border-white/5 pt-8 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <span>© 2026 TradeWithCEO. All Rights Reserved.</span>
-          <div className="flex gap-6">
-            <Link
-              href="/privacy"
-              className="transition-colors hover:text-foreground-strong"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              href="/terms"
-              className="transition-colors hover:text-foreground-strong"
-            >
-              Terms of Service
-            </Link>
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            {LEGAL_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="transition-colors hover:text-foreground-strong"
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
       </Container>
