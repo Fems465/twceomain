@@ -27,7 +27,10 @@ export function Reveal({
     <Tag
       initial={reduce ? false : { opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
+      // Trigger on the first pixel past a small bottom inset rather than a
+      // visible fraction: a fraction can never be met by content taller than
+      // the viewport (e.g. the Privacy Policy body), which would stay hidden.
+      viewport={{ once: true, amount: "some", margin: "0px 0px -8% 0px" }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay }}
       className={cn(className)}
     >
