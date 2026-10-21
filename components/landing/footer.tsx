@@ -54,7 +54,7 @@ const QUICK_LINKS = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/#what-we-do" },
   { label: "Services", href: "/products" },
-  { label: "FAQ", href: "/" },
+  { label: "FAQ", href: "/faq" },
 ];
 
 const LEGAL_LINKS = [
