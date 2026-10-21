@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { Container } from "@/components/landing/container";
 import { Logo } from "@/components/landing/icons";
+import { Reveal } from "@/components/ui/reveal";
 
 import googleBadge from "@/public/get-on-google.png";
 import appStoreBadge from "@/public/get-on-app-store.png";
@@ -90,11 +91,11 @@ export function Footer() {
               type="email"
               required
               placeholder="Enter your email"
-              className="h-12 flex-1 rounded-lg border border-white/15 bg-white/5 px-4 text-sm text-foreground-strong placeholder:text-muted-foreground focus:border-brand-purple focus:outline-none"
+              className="h-12 flex-1 rounded-lg border border-white/15 bg-white/5 px-4 text-sm text-foreground-strong placeholder:text-muted-foreground transition-all focus:border-brand-purple focus:bg-white/7 focus:outline-none focus:ring-3 focus:ring-brand-purple/20"
             />
             <button
               type="submit"
-              className="h-12 shrink-0 rounded-lg bg-white px-5 font-heading text-sm font-semibold text-[#16192c] transition-colors hover:bg-white/90"
+              className="h-12 shrink-0 rounded-lg bg-white px-5 font-heading text-sm font-semibold text-[#16192c] transition-all hover:bg-white/90 active:scale-[0.97]"
             >
               Stay Connected
             </button>
@@ -103,7 +104,7 @@ export function Footer() {
 
         {/* Main columns */}
         <div className="grid gap-12 py-12 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1.1fr]">
-          <div>
+          <Reveal>
             <h3 className="font-heading text-3xl font-semibold leading-tight text-foreground-strong">
               Stay Connected
               <br />
@@ -115,15 +116,15 @@ export function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="text-foreground-strong/90 transition-colors hover:text-brand-gold"
+                  className="inline-flex text-foreground-strong/90 transition-all hover:-translate-y-0.5 hover:text-brand-gold"
                 >
                   <Icon className="size-5" />
                 </a>
               ))}
             </div>
-          </div>
+          </Reveal>
 
-          <div>
+          <Reveal delay={0.08}>
             <h4 className="font-heading text-xs font-semibold uppercase tracking-wider text-muted-foreground">
               Quick Links
             </h4>
@@ -132,16 +133,16 @@ export function Footer() {
                 <li key={l.label}>
                   <Link
                     href={l.href}
-                    className="text-sm text-foreground transition-colors hover:text-brand-gold"
+                    className="inline-block text-sm text-foreground transition-all hover:translate-x-1 hover:text-brand-gold"
                   >
                     {l.label}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </Reveal>
 
-          <div>
+          <Reveal delay={0.16}>
             <h4 className="font-heading text-xs font-semibold uppercase tracking-wider text-muted-foreground">
               Contact
             </h4>
@@ -168,14 +169,14 @@ export function Footer() {
               Download App
             </p>
             <div className="mt-3 flex flex-wrap items-center gap-3">
-              <a href="#" aria-label="Get it on Google Play">
+              <a href="#" aria-label="Get it on Google Play" className="inline-block transition-transform hover:-translate-y-0.5">
                 <Image
                   src={googleBadge}
                   alt="Get it on Google Play"
                   className="h-10 w-auto"
                 />
               </a>
-              <a href="#" aria-label="Download on the App Store">
+              <a href="#" aria-label="Download on the App Store" className="inline-block transition-transform hover:-translate-y-0.5">
                 <Image
                   src={appStoreBadge}
                   alt="Download on the App Store"
@@ -183,7 +184,7 @@ export function Footer() {
                 />
               </a>
             </div>
-          </div>
+          </Reveal>
         </div>
 
         {/* Bottom bar */}

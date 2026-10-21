@@ -83,7 +83,7 @@ export function Expanding() {
             <motion.div
               key={item}
               variants={card}
-              className="flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.03] px-5 py-5"
+              className="flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.03] px-5 py-5 transition-[translate,border-color,background-color] duration-300 hover:-translate-y-1 hover:border-brand-purple/40 hover:bg-white/[0.05]"
             >
               <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-brand-purple/15 font-heading text-sm font-semibold text-brand-purple">
                 {i + 1}

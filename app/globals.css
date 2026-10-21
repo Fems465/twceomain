@@ -33,6 +33,11 @@
   --color-bg-hero: #070811; /* hero backdrop (near-black) */
   --color-surface-2: #222741;
 
+  /* Softer default for every `transition-*` utility: slightly longer than
+     Tailwind's 150ms, with the same ease-out curve the motion sections use. */
+  --default-transition-duration: 220ms;
+  --default-transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+
   /* WhatsApp redirect dialog — countdown progress bar */
   --animate-whatsapp-progress: whatsapp-progress 3s linear forwards;
 }
@@ -168,6 +173,13 @@
     color-scheme: dark;
     @apply font-body;
   }
+  /* Smooth in-page anchor jumps (#how-it-works, FAQ categories…). Route
+     changes still jump instantly via data-scroll-behavior on <html>. */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
   body {
     @apply bg-background text-foreground;
   }
@@ -201,9 +213,52 @@
     @apply pl-1;
   }
   .legal-prose a {
-    @apply text-brand-gold underline underline-offset-2 transition-colors hover:text-white;
+    @apply text-brand-gold underline decoration-brand-gold/40 underline-offset-2 transition-colors hover:text-white hover:decoration-white;
   }
   .legal-prose strong {
     @apply font-semibold text-foreground-strong;
+  }
+}
+
+/*
+  Page transitions — the <ViewTransition default="page"> around route content
+  in app/layout.tsx. The outgoing page fades out quickly while the incoming
+  one fades and lifts in, so navigation never hard-cuts.
+*/
+/* Pages differ in height — snap the group to the new size and show both
+   snapshots at their natural size (top-aligned) instead of stretching them. */
+::view-transition-group(.page) {
+  animation: none;
+}
+::view-transition-old(.page),
+::view-transition-new(.page) {
+  height: 100%;
+  object-fit: none;
+  object-position: top;
+}
+::view-transition-old(.page) {
+  animation: page-fade-out 160ms ease-out both;
+}
+::view-transition-new(.page) {
+  animation: page-fade-in 380ms cubic-bezier(0.22, 1, 0.36, 1) 60ms both;
+}
+
+@keyframes page-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
   }
 }

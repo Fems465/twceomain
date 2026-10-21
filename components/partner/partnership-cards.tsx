@@ -74,7 +74,7 @@ function PartnerCard({ partner, variants }: { partner: Partner; variants: Varian
   return (
     <motion.div
       variants={variants}
-      className="flex w-full flex-col rounded-lg border border-white/12 bg-white/8 p-7 backdrop-blur-xl sm:aspect-square sm:p-8"
+      className="flex w-full flex-col rounded-lg border border-white/12 bg-white/8 p-7 backdrop-blur-xl transition-[translate,border-color,box-shadow] duration-300 hover:-translate-y-1.5 hover:border-white/25 hover:shadow-2xl hover:shadow-brand-purple/15 sm:aspect-square sm:p-8"
     >
       <div
         className={cn(

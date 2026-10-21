@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ViewTransition } from "react";
 import { Encode_Sans, Ubuntu } from "next/font/google";
 import "./globals.css";
 
@@ -82,6 +83,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${encodeSans.variable} ${ubuntu.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
@@ -90,7 +92,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <Navbar />
-        {children}
+        {/* Crossfades route content on navigation; styled via .page in globals.css */}
+        <ViewTransition default="page">{children}</ViewTransition>
         <Footer />
       </body>
     </html>

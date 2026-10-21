@@ -76,9 +76,9 @@ export function Features() {
             <motion.div
               key={f.title}
               variants={item}
-              className="mx-auto flex max-w-sm flex-col items-center text-center"
+              className="group mx-auto flex max-w-sm flex-col items-center text-center"
             >
-              <div className="flex size-29 items-center justify-center rounded-lg border border-white/10 bg-white/5 backdrop-blur-md">
+              <div className="flex size-29 items-center justify-center rounded-lg border border-white/10 bg-white/5 backdrop-blur-md transition-all duration-300 group-hover:-translate-y-1.5 group-hover:border-brand-purple/40 group-hover:bg-white/8 group-hover:shadow-xl group-hover:shadow-brand-purple/20">
                 <Image src={f.icon} alt="" className="max-h-16 w-auto" />
               </div>
               <h3 className="mt-6 font-heading text-xl font-semibold text-foreground-strong">

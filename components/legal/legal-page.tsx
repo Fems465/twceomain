@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { Container } from "@/components/landing/container";
+import { Reveal } from "@/components/ui/reveal";
 
 import heroBg from "@/public/hero/hero-bg.webp";
 
@@ -38,27 +39,35 @@ export function LegalPage({
           className="pointer-events-none z-0 select-none object-cover object-top opacity-40 mix-blend-soft-light"
         />
         <Container className="relative z-10">
-          <p className="font-heading text-xs font-semibold uppercase tracking-[0.2em] text-brand-purple">
-            Legal
-          </p>
-          <h1 className="mt-4 font-heading text-3xl font-semibold leading-[1.15] tracking-tight text-white sm:text-4xl lg:text-[44px]">
-            {title}
-          </h1>
-          {intro ? (
-            <p className="mt-5 max-w-2xl text-base leading-[1.9] text-foreground">
-              {intro}
+          <Reveal>
+            <p className="font-heading text-xs font-semibold uppercase tracking-[0.2em] text-brand-purple">
+              Legal
             </p>
-          ) : null}
-          <p className="mt-6 text-sm text-muted-foreground">
-            Last updated: {lastUpdated}
-          </p>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <h1 className="mt-4 font-heading text-3xl font-semibold leading-[1.15] tracking-tight text-white sm:text-4xl lg:text-[44px]">
+              {title}
+            </h1>
+          </Reveal>
+          <Reveal delay={0.16}>
+            {intro ? (
+              <p className="mt-5 max-w-2xl text-base leading-[1.9] text-foreground">
+                {intro}
+              </p>
+            ) : null}
+            <p className="mt-6 text-sm text-muted-foreground">
+              Last updated: {lastUpdated}
+            </p>
+          </Reveal>
         </Container>
       </section>
 
       {/* Body */}
       <section className="py-14 lg:py-20">
         <Container>
-          <div className="legal-prose max-w-3xl">{children}</div>
+          <Reveal delay={0.2} className="legal-prose max-w-3xl">
+            {children}
+          </Reveal>
         </Container>
       </section>
     </main>

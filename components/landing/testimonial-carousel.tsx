@@ -25,7 +25,7 @@ function Card({ t }: { t: Testimonial }) {
       data-card
       className="snap-start shrink-0 basis-full pr-6 last:pr-0 sm:basis-1/2 lg:basis-1/3"
     >
-      <div className="flex h-full flex-col rounded-lg bg-gradient-to-br from-[#6b4fb3] to-[#432c86] p-6 ring-1 ring-inset ring-white/10">
+      <div className="flex h-full flex-col rounded-lg bg-gradient-to-br from-[#6b4fb3] to-[#432c86] p-6 ring-1 ring-inset ring-white/10 transition-[translate,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-purple/25 hover:ring-white/20">
         <Image src={quoteIcon} alt="" className="h-auto w-6" />
         <p className="mt-4 flex-1 text-sm leading-[1.8] text-white/90">
           {t.quote}
@@ -113,7 +113,7 @@ export function TestimonialCarousel({
           <div
             ref={scroller}
             onScroll={onScroll}
-            className="flex snap-x snap-mandatory overflow-x-auto scroll-smooth pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            className="flex snap-x snap-mandatory overflow-x-auto scroll-smooth -mt-2 -mb-2 pt-2 pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
             {testimonials.map((t) => (
               <Card key={t.name} t={t} />

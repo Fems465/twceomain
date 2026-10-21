@@ -42,7 +42,7 @@ const INITIAL_STATE: FormState = {
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const fieldClass =
-  "h-12 w-full rounded-md border border-white/15 bg-white/5 px-4 text-sm text-foreground-strong placeholder:text-muted-foreground focus:border-brand-purple focus:outline-none";
+  "h-12 w-full rounded-md border border-white/15 bg-white/5 px-4 text-sm text-foreground-strong placeholder:text-muted-foreground transition-all hover:border-white/25 focus:border-brand-purple focus:bg-white/7 focus:outline-none focus:ring-3 focus:ring-brand-purple/20";
 
 function Label({
   htmlFor,
