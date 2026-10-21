@@ -18,6 +18,7 @@ const NAV_LINKS = [
   { label: "Our Products", href: "/products" },
   { label: "Our Approach", href: "/approach" },
   { label: "Partner With Us", href: "/partner" },
+  { label: "FAQ", href: "/faq" },
 ];
 
 // A link is "active" only for standalone routes (not home-section anchors).
